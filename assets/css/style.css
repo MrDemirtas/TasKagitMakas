@@ -1,0 +1,148 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  margin-inline: auto;
+  padding: 24px;
+  margin-top: 24px;
+  border: 2px dashed black;
+  border-radius: 12px;
+}
+
+.scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  margin-top: 24px;
+  :first-child {
+    color: green;
+  }
+  :last-child {
+    color: red;
+  }
+}
+
+.scoreboard span {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.selectContents {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.playerSelectContents {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.playerSelectContents span {
+  border: 2px dashed black;
+  padding: 8px;
+  letter-spacing: 4px;
+  font-weight: 500;
+}
+
+.playerSelectContents span:hover {
+  cursor: pointer;
+  border: 2px dashed white;
+  color: white;
+  background-color: crimson;
+}
+
+.playerSelectContents span:active {
+  background-color: #ca4c65;
+}
+
+.statusMsg {
+  margin-top: 24px;
+  .green {
+    color: green;
+    font-weight: bold;
+  }
+  .red {
+    color: red;
+    font-weight: bold;
+  }
+}
